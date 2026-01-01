@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Giesta | Portfolio</title>
+  <link rel="stylesheet" href="./dist/output.css" />
+
+  <style>
+    .wave {
+      display: inline-block;
+      transform-origin: 70% 70%;
+      animation: wave-hand 2.5s infinite;
+    }
+
+    @keyframes wave-hand {
+      0% { transform: rotate(0deg); }
+      10% { transform: rotate(14deg); }
+      20% { transform: rotate(-8deg); }
+      30% { transform: rotate(14deg); }
+      40% { transform: rotate(-4deg); }
+      50% { transform: rotate(10deg); }
+      60% { transform: rotate(0deg); }
+      100% { transform: rotate(0deg); }
+    }
+
+    .social-icon img {
+      width: 35px;
+      height: 35px;
+      max-width: 35px;
+      max-height: 35px;
+      object-fit: contain;
+      display: inline-flex;
+      padding: 8px;
+    }
+
+    .skill-container {
+      perspective: 800px;
+    }
+
+    .skill-ball {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #ffffff, #bfdbfe, #60a5fa);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: grab;
+      box-shadow:
+        inset -8px -8px 16px rgba(255,255,255,0.6),
+        inset 8px 8px 16px rgba(0,0,0,0.15),
+        0 10px 20px rgba(0,0,0,0.15);
+      transform-style: preserve-3d;
+      transition: box-shadow 0.2s;
+    }
+
+    .skill-ball:active {
+      cursor: grabbing;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+    }
+
+    .skill-ball img {
+      width: 40px;
+      height: 40px;
+      pointer-events: none;
+      transform: translateZ(20px);
+    }
+  </style>
+
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- ================= HERO SECTION ================= -->
+  <section class="relative overflow-hidden">
+    <!-- background glow -->
+    <div class="absolute inset-0 -z-10">
+      <div class="absolute top-20 left-10 w-72 h-72 bg-purple-300/40 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-20 right-10 w-72 h-72 bg-pink-300/40 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-6 py-24 grid grid-cols-1 md:grid-cols-2 items-center gap-12">
+
+      <!-- TEXT -->
+      <div>
+        <h1 class="text-4xl md:text-5xl font-bold text-blue-600">
+          Hi, I’m Giesta <span class="wave">👋</span>
+        </h1>
+
+        <h2 class="mt-3 text-xl md:text-2xl font-semibold text-gray-700">
+          Junior Web Developer
+        </h2>
+
+        <p class="mt-5 text-gray-600 leading-relaxed max-w-md">
+          I enjoy building clean, responsive, and user-friendly web interfaces
+          with a strong focus on design and usability.
+        </p>
+
+        <!-- SOCIAL LINKS -->
+        <div class="mt-5 flex items-center gap-5">
+
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=giestadevelopment@gmail.com"
+            target="_blank"
+            class="social-icon">
+            <img src="icons/gmail.svg" alt="Email">
+          </a>
+
+          <a href="https://instagram.com/tata_staap"
+            target="_blank"
+            class="social-icon">
+            <img src="icons/instagram.svg" alt="Instagram">
+          </a>
+
+          <!-- <a href="https://linkedin.com/in/username" -->
+          <a href="#"
+            target="_blank"
+            class="social-icon">
+            <img src="icons/linkedin.svg" alt="LinkedIn">
+          </a>
+
+          <a href="https://github.com/giestaap"
+            target="_blank"
+            class="social-icon">
+            <img src="icons/github.svg" alt="GitHub">
+          </a>
+
+        </div>
+
+        <a href="#projects"
+           class="inline-block mt-8 px-6 py-3 bg-blue-600 text-white rounded-xl
+                  shadow-lg transition hover:bg-blue-700 hover:shadow-xl">
+          View Projects
+        </a>
+      </div>
+
+      <!-- IMAGE -->
+      <div class="flex justify-center">
+        <div class="relative">
+          <!-- glow behind image -->
+          <div class="absolute inset-0 bg-pink-300/30 blur-3xl rounded-full"></div>
+          <img src="avatar.png"
+               alt="Giesta illustration"
+               class="relative w-72 md:w-80 rounded-2xl">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section class="max-w-5xl mx-auto px-6 py-20">
+    <h3 class="text-2xl font-bold text-gray-800 mb-6">
+      About Me
+    </h3>
+
+    <p class="text-gray-600 leading-relaxed max-w-3xl">
+      Hi everyone! My name is Giesta Andini, and I’m a passionate Web Programmer with a background 
+      in Computer and Network Engineering. I have strong interest and hands-on experience in building 
+      web applications, especially using PHP and frameworks like CodeIgniter and Laravel with a main 
+      focus on Laravel for creating clean, efficient, and scalable solutions.
+    </p>
+
+    <p class="text-gray-600 leading-relaxed max-w-3xl">
+      I'm skilled in database management, API integration, and applying best practices like clean code 
+      and the MVC architecture. I enjoy solving real-world problems through well-structured digital 
+      products, and I’m always excited to collaborate in a development team to create responsive and 
+      functional web applications.
+    </p>
+
+    <a href="#"
+       class="inline-block mt-8 px-6 py-3 bg-blue-600 text-white rounded-xl
+            shadow-lg transition hover:bg-blue-700 hover:shadow-xl">
+        Read My Blog
+    </a>
+  </section>
+
+  <!-- ================= SKILLS ================= -->
+  <section class="bg-white py-20">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h3 class="text-2xl font-bold text-gray-800 mb-10">
+        Skills
+      </h3>
+
+      <div class="flex flex-wrap justify-center gap-8">
+        
+        <!-- BALL -->
+        <div class="skill-container">
+          <div class="skill-ball">
+            <img src="icons/html5.svg" alt="HTML">
+          </div>
+        </div>
+
+        <div class="skill-container">
+          <div class="skill-ball">
+            <img src="icons/css.svg" alt="CSS">
+          </div>
+        </div>
+
+        <div class="skill-container">
+          <div class="skill-ball">
+            <img src="icons/bootstrap.svg" alt="Bootstrap">
+          </div>
+        </div>
+        
+        <div class="skill-ball">
+          <img src="icons/tailwindcss.svg" alt="Tailwind">
+        </div>
+
+        <div class="skill-container">
+          <div class="skill-ball">
+            <img src="icons/javascript.svg" alt="JavaScript">
+          </div>
+        </div>
+
+        <div class="skill-container">
+          <div class="skill-ball">
+            <img src="icons/github.svg" alt="Github">
+          </div>
+        </div>
+
+        <div class="skill-container">
+          <div class="skill-ball">
+            <img src="icons/postman.svg" alt="Postman">
+          </div>
+        </div>
+
+        <div class="skill-container">
+          <div class="skill-ball">
+            <img src="icons/phpmyadmin.svg" alt="Phpmyadmin">
+          </div>
+        </div>
+
+        <div class="skill-container">
+          <div class="skill-ball">
+            <img src="icons/laravel.svg" alt="Laravel">
+          </div>
+        </div>
+
+        <div class="skill-container">
+          <div class="skill-ball">
+            <img src="icons/codeigniter.svg" alt="Codeigniter">
+          </div>
+        </div>
+
+        <!-- <div class="skill-container">
+          <div class="skill-ball">
+            <img src="icons/vuedotjs.svg" alt="Vuedotjs">
+          </div>
+        </div>
+
+        <div class="skill-container">
+          <div class="skill-ball">
+            <img src="icons/react.svg" alt="React">
+          </div>
+        </div> -->
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROJECTS ================= -->
+  <section id="projects" class="max-w-6xl mx-auto px-6 py-20">
+    <h3 class="text-2xl font-bold text-gray-800 mb-10">
+      Projects
+    </h3>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+      <!-- Project Card -->
+      <div class="bg-white p-6 rounded-2xl shadow-lg transition hover:-translate-y-1 hover:shadow-xl">
+        <h4 class="text-lg font-semibold mb-2">Portfolio Website</h4>
+        <p class="text-gray-600 text-sm mb-4">
+          A personal portfolio website built with HTML, Tailwind CSS, and JavaScript.
+        </p>
+        <div class="flex gap-4">
+          <a href="#" class="text-blue-600 font-medium hover:underline">Live</a>
+          <a href="#" class="text-blue-600 font-medium hover:underline">GitHub</a>
+        </div>
+      </div>
+
+      <!-- Project Card -->
+      <div class="bg-white p-6 rounded-2xl shadow-lg transition hover:-translate-y-1 hover:shadow-xl">
+        <h4 class="text-lg font-semibold mb-2">Simple Web App</h4>
+        <p class="text-gray-600 text-sm mb-4">
+          A simple frontend project focusing on responsive layout and clean UI.
+        </p>
+        <div class="flex gap-4">
+          <a href="#" class="text-blue-600 font-medium hover:underline">Live</a>
+          <a href="#" class="text-blue-600 font-medium hover:underline">GitHub</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-white py-10 text-center">
+    <p class="text-gray-500">
+      © 2026 Giesta Andini Putri
+    </p>
+  </footer>
+
+  <script>
+    document.querySelectorAll(".skill-ball").forEach(ball => {
+      let isDragging = false;
+      let lastX = 0;
+      let lastY = 0;
+      let rotateX = 0;
+      let rotateY = 0;
+
+      ball.addEventListener("mousedown", (e) => {
+        isDragging = true;
+        lastX = e.clientX;
+        lastY = e.clientY;
+        ball.style.cursor = "grabbing";
+      });
+
+      window.addEventListener("mouseup", () => {
+        isDragging = false;
+        ball.style.cursor = "grab";
+      });
+
+      window.addEventListener("mousemove", (e) => {
+        if (!isDragging) return;
+
+        const deltaX = e.clientX - lastX;
+        const deltaY = e.clientY - lastY;
+
+        rotateY += deltaX * 0.5;
+        rotateX -= deltaY * 0.5;
+
+        ball.style.transform =
+          `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+
+        lastX = e.clientX;
+        lastY = e.clientY;
+      });
+    });
+  </script>
+
+</body>
+</html>
